@@ -9,9 +9,12 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "prepare": "husky",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
     "redeploy": "curl -X POST https://api.netlify.com/build_hooks/6750450a396b7809c5bd446f && echo 'In progress, build will be available at: https://workshopswa.netlify.app'"
   },
   "dependencies": {
+    "jest-axe": "^9.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "uuid": "^7.0.3"
@@ -20,6 +23,10 @@
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
     "@eslint/js": "^9.15.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/jest-axe": "^3.5.9",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@types/uuid": "^10.0.0",
@@ -32,6 +39,8 @@
     "eslint-plugin-react-refresh": "^0.4.14",
     "globals": "^15.12.0",
     "husky": "^9.1.7",
+    "jest-environment-jsdom": "^29.7.0",
+    "jsdom": "^25.0.1",
     "lint-staged": "^15.2.10",
     "postcss": "^8.4.49",
     "prettier": "^3.4.2",
@@ -40,6 +49,7 @@
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.15.0",
     "vite": "^6.0.1",
-    "vite-tsconfig-paths": "^5.1.3"
+    "vite-tsconfig-paths": "^5.1.3",
+    "vitest": "^2.1.8"
   }
 }
