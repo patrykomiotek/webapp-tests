@@ -30,7 +30,7 @@
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedParameters": true, // ❌ only for workshop app
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
   },
