@@ -27,7 +27,7 @@ export const RegistrationFormRefs = ({ onSubmit }: Props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Input label="E-mail" ref={emailInput} type="email" name="email" />
+      <Input label="E-mail" ref={emailInput} name="email" />
       <Input label="Password" ref={passwordInput} type="password" name="password" />
       <Input label="Language" ref={favLangInput} name="favLang" />
       <div>

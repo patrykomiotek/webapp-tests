@@ -58,7 +58,7 @@ export const RegistrationFormState = ({ onSubmit }: Props) => {
         label="E-mail"
         value={formState.email}
         onChange={handleChange}
-        type="email"
+        // type="email"
         name="email"
       />
       <Input
@@ -68,7 +68,7 @@ export const RegistrationFormState = ({ onSubmit }: Props) => {
         type="password"
         name="password"
       />
-      <Input label="Password" value={formState.favLang} onChange={handleChange} name="favLang" />
+      <Input label="Language" value={formState.favLang} onChange={handleChange} name="favLang" />
 
       <div>
         <Button type="submit">Send</Button>
