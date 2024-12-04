@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type MouseEventHandler } from "react";
 import { v4 as uuidv4 } from "uuid"; //https://www.npmjs.com/package/uuid/v/7.0.3
 import { Button, Text } from "@ui";
 
@@ -10,10 +10,18 @@ export const Generator = () => {
     setKeyGenerated(newGenKey);
   };
 
+  const handleButtonClick: MouseEventHandler<HTMLButtonElement> = () => {
+    generateNewKey();
+  };
+
+  const handleRootClick: MouseEventHandler<HTMLDivElement> = () => {
+    // generateNewKey();
+  };
+
   return (
-    <div>
+    <div onClick={handleRootClick}>
       <Button
-        onClick={() => generateNewKey()}
+        onClick={handleButtonClick}
         // style={{ border: "#fff 3px solid" }}
       >
         Generate
