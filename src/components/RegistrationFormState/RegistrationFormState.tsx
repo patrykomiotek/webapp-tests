@@ -1,4 +1,4 @@
-import { Button } from '@ui';
+import { Button, Input } from '@ui';
 import { FormEventHandler, useState, type ChangeEventHandler } from 'react';
 
 export const RegistrationFormState = () => {
@@ -44,32 +44,22 @@ export const RegistrationFormState = () => {
         E-mail: {formState.email}, password: {formState.password}
       </p>
 
-      <div className="my-4">
-        <input
-          type="email"
-          name="email"
-          value={formState.email}
-          onChange={handleChange}
-          className="bg-black text-white"
-        />
-      </div>
-      <div className="my-4">
-        <input
-          type="password"
-          name="password"
-          value={formState.password}
-          onChange={handleChange}
-          className="bg-black text-white"
-        />
-      </div>
-      <div className="my-4">
-        <input
-          name="favLang"
-          value={formState.favLang}
-          onChange={handleChange}
-          className="bg-black text-white"
-        />
-      </div>
+      <Input
+        label="E-mail"
+        value={formState.email}
+        onChange={handleChange}
+        type="email"
+        name="email"
+      />
+      <Input
+        label="Password"
+        value={formState.password}
+        onChange={handleChange}
+        type="password"
+        name="password"
+      />
+      <Input label="Password" value={formState.favLang} onChange={handleChange} name="favLang" />
+
       <div>
         <Button type="submit">Send</Button>
       </div>

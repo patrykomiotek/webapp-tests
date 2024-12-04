@@ -1,4 +1,5 @@
 import { Button } from '@ui';
+import { Input } from '@ui';
 import { type FormEventHandler, useRef } from 'react';
 
 export const RegistrationFormRefs = () => {
@@ -15,20 +16,9 @@ export const RegistrationFormRefs = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="my-4">
-        <input ref={emailInput} type="email" name="email" className="bg-black text-white" />
-      </div>
-      <div className="my-4">
-        <input
-          ref={passwordInput}
-          type="password"
-          name="password"
-          className="bg-black text-white"
-        />
-      </div>
-      <div className="my-4">
-        <input ref={favLangInput} name="favLang" className="bg-black text-white" />
-      </div>
+      <Input label="E-mail" ref={emailInput} type="email" name="email" />
+      <Input label="Password" ref={passwordInput} type="password" name="password" />
+      <Input label="Password" ref={favLangInput} name="favLang" />
       <div>
         <Button type="submit">Send</Button>
       </div>
