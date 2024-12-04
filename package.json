@@ -14,9 +14,11 @@
     "redeploy": "curl -X POST https://api.netlify.com/build_hooks/6750450a396b7809c5bd446f && echo 'In progress, build will be available at: https://workshopswa.netlify.app'"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
     "jest-axe": "^9.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.53.2",
     "react-toastify": "^10.0.6",
     "uuid": "^7.0.3",
     "zod": "^3.23.8"
