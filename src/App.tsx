@@ -1,6 +1,6 @@
 import { RegistrationFormState } from "@components/RegistrationFormState";
 import "./App.css";
-import { Generator } from "@components/Generator";
+// import { Generator } from "@components/Generator";
 
 function App() {
   return (
