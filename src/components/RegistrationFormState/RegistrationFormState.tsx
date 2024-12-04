@@ -1,13 +1,14 @@
-import { FormEventHandler, useState, type ChangeEventHandler } from "react";
+import { Button } from '@ui';
+import { FormEventHandler, useState, type ChangeEventHandler } from 'react';
 
 export const RegistrationFormState = () => {
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
   // const [favLang, setFavLang] = useState("");
   const [formState, setFormState] = useState({
-    email: "",
-    password: "",
-    favLang: "",
+    email: '',
+    password: '',
+    favLang: '',
   });
 
   // const handleSetFavLang: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -68,6 +69,9 @@ export const RegistrationFormState = () => {
           onChange={handleChange}
           className="bg-black text-white"
         />
+      </div>
+      <div>
+        <Button type="submit">Send</Button>
       </div>
     </form>
   );
