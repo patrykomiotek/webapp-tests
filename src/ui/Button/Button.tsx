@@ -18,12 +18,14 @@ interface Props {
   className?: string;
   color?: ColorsValues;
   bgcolor?: ColorsValues;
+  onClick?: () => void;
 }
 export const Button = ({
   children,
   className,
   color = "Asphalt",
   bgcolor = "Sunflower",
+  onClick,
 }: Props) => {
   return (
     <button
@@ -32,6 +34,7 @@ export const Button = ({
         color: colors[color],
         backgroundColor: colors[bgcolor],
       }}
+      onClick={onClick}
     >
       {children}
     </button>
