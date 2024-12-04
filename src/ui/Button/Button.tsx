@@ -1,4 +1,5 @@
 import { type ComponentProps } from "react";
+import { classMerge } from "utils/cn";
 
 // enum ColorsValues {
 //   Turquoise = "#1ABC9C",
@@ -32,10 +33,15 @@ export const Button = ({
   children,
   color = "Asphalt",
   bgcolor = "Sunflower",
+  className,
   ...rest
 }: Props) => {
   return (
     <button
+      className={classMerge(
+        "my-4 py-2 px-4 cursor-pointer text-md rounded-md transition-colors hover:opacity-85",
+        className
+      )}
       style={{
         color: colors[color],
         backgroundColor: colors[bgcolor],
