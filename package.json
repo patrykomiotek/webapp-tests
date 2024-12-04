@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky",
+    "redeploy": "curl -X POST https://api.netlify.com/build_hooks/6750450a396b7809c5bd446f && echo 'In progress, build will be available at: https://workshopswa.netlify.app'"
   },
   "dependencies": {
     "react": "^18.3.1",
