@@ -12,7 +12,12 @@ export const Generator = () => {
 
   return (
     <div>
-      <Button onClick={() => generateNewKey()}>Generate</Button>
+      <Button
+        onClick={() => generateNewKey()}
+        // style={{ border: "#fff 3px solid" }}
+      >
+        Generate
+      </Button>
       <hr />
       <Text>{keyGenerated}</Text>
     </div>
