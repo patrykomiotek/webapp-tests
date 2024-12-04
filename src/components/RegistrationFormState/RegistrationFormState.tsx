@@ -1,7 +1,12 @@
+import { type RegistrationFromData } from '@pages/Home';
 import { Button, Input } from '@ui';
 import { FormEventHandler, useState, type ChangeEventHandler } from 'react';
 
-export const RegistrationFormState = () => {
+interface Props {
+  onSubmit: (data: RegistrationFromData) => void;
+}
+
+export const RegistrationFormState = ({ onSubmit }: Props) => {
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
   // const [favLang, setFavLang] = useState("");
@@ -34,9 +39,14 @@ export const RegistrationFormState = () => {
   const handleSubmit: FormEventHandler = (event) => {
     event.preventDefault();
 
-    console.log(formState.email);
-    console.log(formState.password);
-    console.log(formState.favLang);
+    // console.log(formState.email);
+    // console.log(formState.password);
+    // console.log(formState.favLang);
+    onSubmit({
+      email: formState.email,
+      password: formState.password,
+      favLang: formState.favLang,
+    });
   };
   return (
     <form onSubmit={handleSubmit}>
