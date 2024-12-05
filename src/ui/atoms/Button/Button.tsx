@@ -1,5 +1,5 @@
 import { type ComponentProps } from 'react';
-import { classMerge } from 'utils/cn';
+import { classMerge } from '@ui';
 
 // enum ColorsValues {
 //   Turquoise = "#1ABC9C",

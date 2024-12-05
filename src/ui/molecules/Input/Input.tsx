@@ -1,4 +1,4 @@
-import { Label } from '../Label';
+import { Label } from '../../atoms/Label';
 import { type ComponentProps, useId, forwardRef, ComponentPropsWithRef } from 'react';
 import { type FieldError } from 'react-hook-form';
 
