@@ -1,5 +1,6 @@
 import { RegistrationFromData } from '@apptypes/registration';
 import { RegistrationFormState } from '@components/RegistrationFormState';
+import { Header } from '@ui';
 
 export const RegistrationFormStatePage = () => {
   const handleSubmit = (data: RegistrationFromData): void => {
@@ -8,7 +9,7 @@ export const RegistrationFormStatePage = () => {
 
   return (
     <div>
-      <h2 className="text-2xl">With React Hook Form</h2>
+      <Header>With React State</Header>
       <RegistrationFormState onSubmit={handleSubmit} />
     </div>
   );

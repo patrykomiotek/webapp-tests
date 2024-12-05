@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchProducts, type ProductType } from '../services/products';
 import { useApi } from '@hooks/useApi';
+import { Header, Text } from '@ui';
 
 export const ProductsList = () => {
   // const { data, isError, isLoading } = useApi<ProductType[] | undefined>(fetchProducts);
@@ -29,15 +30,15 @@ export const ProductsList = () => {
   // }, []);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Text>Loading...</Text>;
   } else if (isError) {
-    return <p>Error!</p>;
+    return <Text>Error!</Text>;
   }
 
   return (
     <div>
-      <h1 className="text-2xl">Products</h1>
-      <ul>
+      <Header>Products</Header>
+      <ul className="dark:text-slate-300">
         {data?.map((elem) => (
           <li key={elem.id}>
             {elem.fields.name}, ${elem.fields.price}

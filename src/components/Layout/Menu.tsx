@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 // import { ThemeSwitcher } from '@components/Theme/ThemeSwitcher';
 import { Route } from '../../routes';
+import { ThemeSwitcher } from '@components/Theme/ThemeSwitcher';
 // import { selectBasketProductsCount } from '../../features/products/basketSlice';
 // import { Basket } from '@components/Basket';
 
@@ -93,6 +94,9 @@ export const Menu = () => {
               <Basket />
             </NavLink>
           </li> */}
+          <li>
+            <ThemeSwitcher />
+          </li>
         </ul>
       </nav>
     </div>

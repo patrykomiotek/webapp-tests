@@ -1,5 +1,5 @@
-import { type RegistrationFromData } from '@pages/Home';
-import { Button, Input } from '@ui';
+import { RegistrationFromData } from '@apptypes/registration';
+import { Button, Input, Text } from '@ui';
 import { FormEventHandler, useState, type ChangeEventHandler } from 'react';
 
 interface Props {
@@ -50,9 +50,9 @@ export const RegistrationFormState = ({ onSubmit }: Props) => {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <p>
+      <Text>
         E-mail: {formState.email}, password: {formState.password}
-      </p>
+      </Text>
 
       <Input
         label="E-mail"

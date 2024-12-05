@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchCategories, type Category } from '../services/products';
+import { Header } from '@ui';
 
 export const CategoriesList = () => {
   const [data, setData] = useState<Category[]>([]);
@@ -26,8 +27,8 @@ export const CategoriesList = () => {
 
   return (
     <div>
-      <h1 className="text-2xl">Categories</h1>
-      <ul>
+      <Header>Categories</Header>
+      <ul className="dark:text-slate-300">
         {data.map((elem) => (
           <li key={elem.id}>{elem.fields.name}</li>
         ))}

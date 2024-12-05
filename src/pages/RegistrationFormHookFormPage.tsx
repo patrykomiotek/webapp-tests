@@ -1,6 +1,7 @@
 import { toast } from 'react-toastify';
 import { RegistrationFormHookForm } from '@components/RegistrationFormHookForm';
 import { RegistrationFromData, registrationSchema } from '@apptypes/registration';
+import { Header } from '@ui';
 
 export const RegistrationFormHookFormPage = () => {
   const handleSubmit = (data: RegistrationFromData): void => {
@@ -20,7 +21,7 @@ export const RegistrationFormHookFormPage = () => {
 
   return (
     <div>
-      <h2 className="text-2xl">With React Hook Form</h2>
+      <Header>With React Hook Form</Header>
       <RegistrationFormHookForm onSubmit={handleSubmit} />
     </div>
   );

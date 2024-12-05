@@ -8,13 +8,16 @@ import { CategoriesList } from '@features/products/components/CategoriesList';
 import { RouterProvider } from 'react-router-dom';
 import { router } from 'routes';
 import { AuthProvider } from '@components/Auth/AuthContext';
+import { ThemeProvider } from '@components/Theme/ThemeContext';
 // import { Generator } from "@components/Generator";
 
 function App() {
   return (
     <>
       <AuthProvider>
-        <RouterProvider router={router} />
+        <ThemeProvider>
+          <RouterProvider router={router} />
+        </ThemeProvider>
       </AuthProvider>
       {/* <ProductsList /> */}
       {/* <CategoriesList /> */}

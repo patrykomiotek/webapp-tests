@@ -1,5 +1,6 @@
 import { RegistrationFromData } from '@apptypes/registration';
 import { RegistrationFormRefs } from '@components/RegistrationFormRefs';
+import { Header } from '@ui';
 
 export const RegistrationFormRefsPage = () => {
   const handleSubmit = (data: RegistrationFromData): void => {
@@ -8,7 +9,7 @@ export const RegistrationFormRefsPage = () => {
 
   return (
     <div>
-      <h2 className="text-2xl">With React Hook Form</h2>
+      <Header>With React Refs</Header>
       <RegistrationFormRefs onSubmit={handleSubmit} />
     </div>
   );
