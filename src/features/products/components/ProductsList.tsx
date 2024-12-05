@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react';
 import { fetchProducts, type ProductType } from '../services/products';
 import { useApi } from '@hooks/useApi';
-import { Header, Text } from '@ui';
+import { Button, Header, Text } from '@ui';
+import { useQuery } from '@tanstack/react-query';
 
 export const ProductsList = () => {
   // const { data, isError, isLoading } = useApi<ProductType[] | undefined>(fetchProducts);
-  const { data, isError, isLoading } = useApi(fetchProducts);
+  // const { data, isError, isLoading } = useApi(fetchProducts);
+  const { data, isError, isLoading, refetch } = useQuery({
+    queryKey: ['products'],
+    queryFn: fetchProducts,
+  });
 
   // const [data, setData] = useState<ProductType[]>([]);
 
@@ -45,6 +50,7 @@ export const ProductsList = () => {
           </li>
         ))}
       </ul>
+      <Button onClick={() => refetch()}>Refresh</Button>
     </div>
   );
 };
