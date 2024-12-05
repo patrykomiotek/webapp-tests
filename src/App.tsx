@@ -13,8 +13,8 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
-      <ProductsList />
-      <CategoriesList />
+      {/* <ProductsList /> */}
+      {/* <CategoriesList /> */}
       {/* <HomePage /> */}
       {/* <Toast /> */}
     </>

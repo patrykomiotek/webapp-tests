@@ -28,6 +28,14 @@ export const Menu = () => {
               Products
             </NavLink>
           </li>
+          <li className="mr-4">
+            <NavLink
+              to={Route.CATEGORIES_LIST.path}
+              className={({ isActive }) => (isActive ? 'text-red-400' : 'dark:text-white')}
+            >
+              Categories
+            </NavLink>
+          </li>
           {/* <li className="mr-4">
             <NavLink
               to={Route.COUNTER.path}

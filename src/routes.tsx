@@ -2,7 +2,8 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import { Layout } from '@components/Layout';
 import { HomePage } from '@pages/HomePage';
-// import { ProductsListPage } from '@pages/ProductsListPage';
+import { ProductsListPage } from '@features/products/pages/ProductsListPage';
+import { CategoriesListPage } from '@features/products/pages/CategoriesListPage';
 // import { ProductDetailsPage } from '@pages/ProductDetailsPage';
 // import { CreateProductPage } from '@pages/CreateProductPage';
 // import { GeneratorPage } from '@pages/GeneratorPage';
@@ -34,6 +35,10 @@ export const Route: Route = {
   PRODUCTS_LIST: {
     path: '/products',
     title: 'Products',
+  },
+  CATEGORIES_LIST: {
+    path: '/categories',
+    title: 'Categories',
   },
   // PRODUCTS_DETAILS: {
   //   path: '/products/:id',
@@ -95,10 +100,14 @@ export const router = createBrowserRouter([
         path: Route.HOME.path,
         element: <HomePage />,
       },
-      // {
-      //   path: Route.PRODUCTS_LIST.path,
-      //   element: <ProductsListPage />,
-      // },
+      {
+        path: Route.PRODUCTS_LIST.path,
+        element: <ProductsListPage />,
+      },
+      {
+        path: Route.CATEGORIES_LIST.path,
+        element: <CategoriesListPage />,
+      },
       // {
       //   path: Route.PRODUCTS_DETAILS.path,
       //   element: <ProductDetailsPage />,
