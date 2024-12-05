@@ -3,22 +3,56 @@
 
 import { useCallback, useEffect, useState } from 'react';
 
+// pending
+// fulfilled
+// rejected
+
+// discriminated unions
+type ResponseState<S> =
+  | {
+      // pending
+      data: undefined;
+      isLoading: true;
+      isError: false;
+      // errorId
+    }
+  | {
+      // fulfilled
+      data: S;
+      isLoading: false;
+      isError: false;
+    }
+  | {
+      // rejected
+      data: undefined;
+      isLoading: false;
+      isError: true;
+    };
+
 export const useApi = <T>(fetchFunction: () => Promise<T>) => {
-  const [data, setData] = useState<T>();
-  const [isError, setIsError] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [state, setState] = useState<ResponseState<T>>({
+    // initial state
+    data: undefined,
+    isLoading: true,
+    isError: false,
+  });
 
   const loadData = async () => {
     try {
-      setIsLoading(true);
       const result = await fetchFunction();
       if (result) {
-        setData(result);
+        setState({
+          data: result as T,
+          isError: false,
+          isLoading: false,
+        });
       }
-      setIsLoading(false);
     } catch (error) {
-      setIsError(true);
-      setIsLoading(false);
+      setState({
+        data: undefined,
+        isError: true,
+        isLoading: false,
+      });
     }
   };
 
@@ -26,9 +60,5 @@ export const useApi = <T>(fetchFunction: () => Promise<T>) => {
     loadData();
   }, [fetchFunction]);
 
-  return {
-    data,
-    isError,
-    isLoading,
-  };
+  return state;
 };

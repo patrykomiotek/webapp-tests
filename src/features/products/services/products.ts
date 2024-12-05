@@ -15,6 +15,7 @@ export const fetchProducts = async () => {
 
     return data.records;
   } catch {
+    // Sentry.capture(exception)
     // HttpError
     // ZodError
     // Error
