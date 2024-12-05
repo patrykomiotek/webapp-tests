@@ -1,3 +1,6 @@
+import { productSchema } from '@apptypes/ProductDto';
+import { ZodError } from 'zod';
+
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const API_TOKEN = import.meta.env.VITE_API_TOKEN;
 
@@ -13,12 +16,19 @@ export const fetchProducts = async () => {
   try {
     const data: ApiListResponse<ProductType> = await get('/products');
 
-    return data.records;
-  } catch {
+    const result = data.records;
+
+    productSchema.parse(result);
+
+    return result;
+  } catch (error) {
     // Sentry.capture(exception)
     // HttpError
     // ZodError
     // Error
+    if (error instanceof ZodError) {
+      //
+    }
   }
 };
 
