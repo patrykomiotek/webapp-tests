@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { type RegistrationFromData, registrationSchema } from '@pages/Home';
+import { type RegistrationFromData, registrationSchema } from '@pages/HomePage'; // this may create circular dependency
 import { Button, Input } from '@ui';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
