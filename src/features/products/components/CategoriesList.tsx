@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { fetchProducts, type ProductType } from '../services/products';
+import { fetchCategories, type Category } from '../services/products';
 
-export const ProductsList = () => {
-  const [data, setData] = useState<ProductType[]>([]);
+export const CategoriesList = () => {
+  const [data, setData] = useState<Category[]>([]);
 
   const loadData = async () => {
     try {
-      const result = await fetchProducts(); // data, success, isLoading, isError
+      const result = await fetchCategories(); // data, success, isLoading, isError
       if (result) {
         setData(result);
       }
@@ -26,12 +26,10 @@ export const ProductsList = () => {
 
   return (
     <div>
-      <h1 className="text-2xl">Products</h1>
+      <h1 className="text-2xl">Categories</h1>
       <ul>
         {data.map((elem) => (
-          <li key={elem.id}>
-            {elem.fields.name}, ${elem.fields.price}
-          </li>
+          <li key={elem.id}>{elem.fields.name}</li>
         ))}
       </ul>
     </div>
