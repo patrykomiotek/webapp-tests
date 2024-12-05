@@ -1,4 +1,9 @@
-import { productSchema } from '@apptypes/ProductDto';
+import {
+  airtableProductSchema,
+  CreateProductDto,
+  ProductFields,
+  productSchema,
+} from '@apptypes/ProductDto';
 import { ZodError } from 'zod';
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -16,11 +21,27 @@ export const fetchProducts = async () => {
   try {
     const data: ApiListResponse<ProductType> = await get('/products');
 
+    airtableProductSchema.parse(data);
+
     const result = data.records;
-
-    productSchema.parse(result);
-
     return result;
+  } catch (error) {
+    // Sentry.capture(exception)
+    // HttpError
+    // ZodError
+    // Error
+    if (error instanceof ZodError) {
+      console.log('Zod error', { error });
+    } else {
+      console.log('fetchProducts', { error });
+    }
+  }
+};
+
+export const createProduct = async (data: CreateProductDto) => {
+  console.log('createProduct', data);
+  try {
+    return await post('/products', data);
   } catch (error) {
     // Sentry.capture(exception)
     // HttpError
@@ -50,6 +71,27 @@ const get = async (path: string) => {
     headers: {
       Authorization: `Bearer ${API_TOKEN}`,
     },
+  });
+  if (!response.ok) {
+    throw new Error(response.statusText);
+    // HttpError
+    // ZodError
+    // Mieso
+  }
+  return await response.json();
+};
+
+const post = async (path: string, data: ProductFields) => {
+  const airtableRecord = { records: [{ fields: { ...data } }] };
+  console.log({ airtableRecord });
+
+  const response = await fetch(`${BASE_URL}${path}`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${API_TOKEN}`,
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify(airtableRecord),
   });
   if (!response.ok) {
     throw new Error(response.statusText);

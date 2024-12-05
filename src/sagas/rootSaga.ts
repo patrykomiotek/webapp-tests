@@ -1,9 +1,14 @@
 import { takeLatest, put, call } from 'redux-saga/effects';
 
-import { ProductDto } from '@apptypes/ProductDto';
-import { fetchProducts } from '@features/products/services/products';
+import { CreateProductDto, ProductDto, UpdateProductDto } from '@apptypes/ProductDto';
+import { createProduct, fetchProducts } from '@features/products/services/products';
 
 // type Products = NonNullable<Awaited<ReturnType<typeof fetchProducts>>>;
+
+type ProductAction = {
+  action: 'CREATE_PRODUCT_REQUESTED';
+  payload: CreateProductDto | UpdateProductDto;
+};
 
 function* customCall(...args) {
   return yield call(...args);
@@ -27,8 +32,25 @@ function* fetchProductsSaga(action) {
   }
 }
 
+function* createProductSaga(action: ProductAction) {
+  try {
+    // 2. working
+    const result = yield call(createProduct, action.payload);
+    console.log('inside saga: ', result);
+
+    // 3. typed-redux-saga disables types error, but result is any
+    // const result = yield* customCall(fetchProducts); //
+
+    yield put({ type: 'PRODUCTS_FETCH_REQUESTED' });
+  } catch (error) {
+    //
+  }
+}
+
 export function* rootSaga() {
   // call for products
   // -> dispatch product reducer
   yield takeLatest('PRODUCTS_FETCH_REQUESTED', fetchProductsSaga);
+
+  yield takeLatest('CREATE_PRODUCT_REQUESTED', createProductSaga);
 }

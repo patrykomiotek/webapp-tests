@@ -8,7 +8,11 @@ type Action = {
 };
 
 type ProductAction = {
-  type: 'PRODUCTS_FETCH_REQUESTED' | 'PRODUCTS_FETCH_FAILED' | 'PRODUCTS_FETCH_SUCCEEDED';
+  type:
+    | 'PRODUCTS_FETCH_REQUESTED'
+    | 'PRODUCTS_FETCH_FAILED'
+    | 'PRODUCTS_FETCH_SUCCEEDED'
+    | 'CREATE_PRODUCT_REQUESTED';
   // payload?: any;
 };
 
@@ -52,6 +56,10 @@ const productsReducer = (state: State = PRODUCTS_INITIAL_STATE, action: ProductA
         ...state,
       }; //
     case 'PRODUCTS_FETCH_FAILED':
+      return {
+        ...state,
+      };
+    case 'CREATE_PRODUCT_REQUESTED':
       return {
         ...state,
       };

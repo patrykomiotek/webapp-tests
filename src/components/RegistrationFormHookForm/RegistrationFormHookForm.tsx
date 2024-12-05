@@ -27,15 +27,9 @@ export const RegistrationFormHookForm = ({ onSubmit }: Props) => {
 
   return (
     <form onSubmit={handleSubmit(handleRegistrationForm)}>
-      <Input {...register('email')} label="E-mail" name="email" error={errors.email} />
-      <Input
-        {...register('password')}
-        label="Password"
-        type="password"
-        name="password"
-        error={errors.password}
-      />
-      <Input {...register('favLang')} label="Language" name="favLang" error={errors.favLang} />
+      <Input {...register('email')} label="E-mail" error={errors.email} />
+      <Input {...register('password')} label="Password" type="password" error={errors.password} />
+      <Input {...register('favLang')} label="Language" error={errors.favLang} />
 
       <div>
         <Button type="submit">Send</Button>

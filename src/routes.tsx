@@ -4,6 +4,7 @@ import { Layout } from '@components/Layout';
 import { HomePage } from '@pages/HomePage';
 import { ProductsListPage } from '@features/products/pages/ProductsListPage';
 import { CategoriesListPage } from '@features/products/pages/CategoriesListPage';
+import { CreateProductPage } from '@features/products/pages/CreateProductPage';
 import { RegistrationFormStatePage } from '@pages/RegistrationFormStatePage';
 import { RegistrationFormRefsPage } from '@pages/RegistrationFormRefsPage';
 import { RegistrationFormHookFormPage } from '@pages/RegistrationFormHookFormPage';
@@ -48,10 +49,10 @@ export const Route: Route = {
   //   title: 'Products details',
   //   dynamicPath: (id: ProductDto['id']) => `/products/${id}`,
   // },
-  // CREATE_PRODUCT: {
-  //   path: '/products/create',
-  //   title: 'Create product',
-  // },
+  CREATE_PRODUCT: {
+    path: '/products/create',
+    title: 'Create product',
+  },
   // ORDER_SUMMARY: {
   //   path: '/order-summary',
   //   title: 'Order Summary',
@@ -115,10 +116,10 @@ export const router = createBrowserRouter([
       //   path: Route.PRODUCTS_DETAILS.path,
       //   element: <ProductDetailsPage />,
       // },
-      // {
-      //   path: Route.CREATE_PRODUCT.path,
-      //   element: <CreateProductPage />,
-      // },
+      {
+        path: Route.CREATE_PRODUCT.path,
+        element: <CreateProductPage />,
+      },
       // {
       //   path: Route.GENERATOR.path,
       //   element: <GeneratorPage />,
