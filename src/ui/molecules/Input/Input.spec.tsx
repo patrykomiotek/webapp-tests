@@ -6,7 +6,7 @@ describe('Input component', () => {
   it('should not have violations', async () => {
     const { debug, container } = render(<Input label="E-mail" />);
     // console.log({ container });
-    debug();
+    // debug();
     const result = await axe(container);
 
     expect(screen.getByRole('textbox')).toBeInTheDocument();

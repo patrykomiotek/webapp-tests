@@ -24,7 +24,7 @@ describe('Button component', () => {
     const { container, debug } = render(<Button>Click me</Button>);
     const result = await axe(container);
     // console.log(container);
-    debug();
+    // debug();
     expect(result).toHaveNoViolations();
   });
 });

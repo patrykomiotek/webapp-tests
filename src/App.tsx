@@ -7,12 +7,15 @@ import { Toast } from '@ui';
 import { CategoriesList } from '@features/products/components/CategoriesList';
 import { RouterProvider } from 'react-router-dom';
 import { router } from 'routes';
+import { AuthProvider } from '@components/Auth/AuthContext';
 // import { Generator } from "@components/Generator";
 
 function App() {
   return (
     <>
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
       {/* <ProductsList /> */}
       {/* <CategoriesList /> */}
       {/* <HomePage /> */}

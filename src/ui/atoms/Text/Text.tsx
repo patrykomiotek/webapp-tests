@@ -2,7 +2,7 @@
 // import type { ReactNode } from "react";
 
 interface Props {
-  children: string;
+  children: string | string[];
 }
 
 export const Text = ({ children }: Props) => <p>{children}</p>;
