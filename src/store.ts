@@ -1,8 +1,14 @@
 import { combineReducers, createStore, compose, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import { rootSaga } from 'sagas/rootSaga';
 
 type Action = {
   type: 'increment' | 'decrement';
+  // payload?: any;
+};
+
+type ProductAction = {
+  type: 'PRODUCTS_FETCH_REQUESTED' | 'PRODUCTS_FETCH_FAILED' | 'PRODUCTS_FETCH_SUCCEEDED';
   // payload?: any;
 };
 
@@ -12,6 +18,10 @@ type State = {
 
 const INITIAL_STATE = {
   count: 0,
+};
+
+const PRODUCTS_INITIAL_STATE = {
+  list: [],
 };
 
 const testReducer = (state: State = INITIAL_STATE, action: Action) => {
@@ -31,22 +41,40 @@ const testReducer = (state: State = INITIAL_STATE, action: Action) => {
   }
 };
 
+const productsReducer = (state: State = PRODUCTS_INITIAL_STATE, action: ProductAction) => {
+  switch (action.type) {
+    case 'PRODUCTS_FETCH_REQUESTED':
+      return {
+        ...state,
+      }; //
+    case 'PRODUCTS_FETCH_SUCCEEDED':
+      return {
+        ...state,
+      }; //
+    case 'PRODUCTS_FETCH_FAILED':
+      return {
+        ...state,
+      };
+
+    default:
+      return state;
+  }
+};
+
 const rootReducer = combineReducers({
   test: testReducer,
+  products: productsReducer,
 });
 
-const initialState = {};
+// const initialState = {};
 
-// const sagaMiddleware = createSagaMiddleware()
-// import { helloSaga } from './sagas';
-
-// const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware();
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const middleware = [];
+const middleware = [sagaMiddleware];
 
 export const store = createStore(rootReducer, composeEnhancers(applyMiddleware(...middleware)));
-// sagaMiddleware.run(mySaga)
+sagaMiddleware.run(rootSaga);
 
 // const action = type => store.dispatch({type})
