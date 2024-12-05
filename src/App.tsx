@@ -9,16 +9,23 @@ import { RouterProvider } from 'react-router-dom';
 import { router } from 'routes';
 import { AuthProvider } from '@components/Auth/AuthContext';
 import { ThemeProvider } from '@components/Theme/ThemeContext';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 // import { Generator } from "@components/Generator";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
     <>
-      <AuthProvider>
-        <ThemeProvider>
-          <RouterProvider router={router} />
-        </ThemeProvider>
-      </AuthProvider>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <ThemeProvider>
+            <RouterProvider router={router} />
+          </ThemeProvider>
+        </AuthProvider>
+        <ReactQueryDevtools initialIsOpen={true} />
+      </QueryClientProvider>
       {/* <ProductsList /> */}
       {/* <CategoriesList /> */}
       {/* <HomePage /> */}
