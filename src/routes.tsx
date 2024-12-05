@@ -4,6 +4,9 @@ import { Layout } from '@components/Layout';
 import { HomePage } from '@pages/HomePage';
 import { ProductsListPage } from '@features/products/pages/ProductsListPage';
 import { CategoriesListPage } from '@features/products/pages/CategoriesListPage';
+import { RegistrationFormStatePage } from '@pages/RegistrationFormStatePage';
+import { RegistrationFormRefsPage } from '@pages/RegistrationFormRefsPage';
+import { RegistrationFormHookFormPage } from '@pages/RegistrationFormHookFormPage';
 // import { ProductDetailsPage } from '@pages/ProductDetailsPage';
 // import { CreateProductPage } from '@pages/CreateProductPage';
 // import { GeneratorPage } from '@pages/GeneratorPage';
@@ -65,18 +68,18 @@ export const Route: Route = {
   //   path: '/auth',
   //   title: 'Auth',
   // },
-  // REGISTRATION_FORM_STATE: {
-  //   path: '/registration-form-state',
-  //   title: 'Registration form state',
-  // },
-  // REGISTRATION_FORM_REFS: {
-  //   path: '/registration-form-refs',
-  //   title: 'Registration form refs',
-  // },
-  // REGISTRATION_FORM_RHF: {
-  //   path: '/registration-form-rhf',
-  //   title: 'Registration form rhf',
-  // },
+  REGISTRATION_FORM_STATE: {
+    path: '/registration-form-state',
+    title: 'Registration form state',
+  },
+  REGISTRATION_FORM_REFS: {
+    path: '/registration-form-refs',
+    title: 'Registration form refs',
+  },
+  REGISTRATION_FORM_RHF: {
+    path: '/registration-form-rhf',
+    title: 'Registration form rhf',
+  },
   // COUNTER: {
   //   path: '/counter',
   //   title: 'Counter',
@@ -128,18 +131,18 @@ export const router = createBrowserRouter([
       //   path: Route.AUTH.path,
       //   element: <AuthPage />,
       // },
-      // {
-      //   path: Route.REGISTRATION_FORM_STATE.path,
-      //   element: <RegistrationFormStatePage />,
-      // },
-      // {
-      //   path: Route.REGISTRATION_FORM_REFS.path,
-      //   element: <RegistrationFormRefsPage />,
-      // },
-      // {
-      //   path: Route.REGISTRATION_FORM_RHF.path,
-      //   element: <RegistrationFormRHFPage />,
-      // },
+      {
+        path: Route.REGISTRATION_FORM_STATE.path,
+        element: <RegistrationFormStatePage />,
+      },
+      {
+        path: Route.REGISTRATION_FORM_REFS.path,
+        element: <RegistrationFormRefsPage />,
+      },
+      {
+        path: Route.REGISTRATION_FORM_RHF.path,
+        element: <RegistrationFormHookFormPage />,
+      },
       // {
       //   path: Route.COUNTER.path,
       //   element: <CounterPage />,

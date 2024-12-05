@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import { fetchProducts, type ProductType } from '../services/products';
 
 export const ProductsList = () => {
+  // const { data, isError, isLoading } = useApi<ProductType[]>(fetchProducts);
+  // const { data, isError, isLoading } = useApi(fetchProducts);
+
   const [data, setData] = useState<ProductType[]>([]);
 
   const loadData = async () => {

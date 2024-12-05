@@ -6,6 +6,7 @@ import { Route } from '../../routes';
 // import { selectBasketProductsCount } from '../../features/products/basketSlice';
 // import { Basket } from '@components/Basket';
 
+// TODO: move to reusable components
 export const Menu = () => {
   // const count = useSelector(selectBasketProductsCount);
   return (
@@ -43,23 +44,23 @@ export const Menu = () => {
             >
               Counter
             </NavLink>
-          </li>
-          <li className="mr-4">
+          </li> */}
+          {/* <li className="mr-4">
             <NavLink
               to={Route.VIEWPORT.path}
               className={({ isActive }) => (isActive ? 'text-red-400' : 'dark:text-white')}
             >
               ViewPort
             </NavLink>
-          </li>
-          <li className="mr-4">
+          </li> */}
+          {/* <li className="mr-4">
             <NavLink
               to={Route.MAGIC_BUTTON.path}
               className={({ isActive }) => (isActive ? 'text-red-400' : 'dark:text-white')}
             >
               Magic Button
             </NavLink>
-          </li>
+          </li> */}
           <li className="mr-4">
             <NavLink
               to={Route.REGISTRATION_FORM_STATE.path}
@@ -84,10 +85,10 @@ export const Menu = () => {
               Registration RHF
             </NavLink>
           </li>
-          <li className="mr-4">
+          {/* <li className="mr-4">
             <ThemeSwitcher />
-          </li>
-          <li className="mr-4">
+          </li> */}
+          {/* <li className="mr-4">
             <NavLink to={Route.ORDER_SUMMARY.path}>
               <Basket />
             </NavLink>
