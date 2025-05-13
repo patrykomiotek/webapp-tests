@@ -1,21 +1,23 @@
-import './App.css';
-
 import { RouterProvider } from 'react-router-dom';
-import { router } from 'routes';
-
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Provider } from 'react-redux';
+// import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
-const queryClient = new QueryClient();
+import { router } from './routes';
+import { store } from './store';
+
+import './App.css';
+
+// const queryClient = new QueryClient();
 
 function App() {
   return (
-    <>
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
-        <ReactQueryDevtools initialIsOpen={true} />
-      </QueryClientProvider>
-    </>
+    <Provider store={store}>
+      {/* <QueryClientProvider client={queryClient}> */}
+      <RouterProvider router={router} />
+      {/* <ReactQueryDevtools initialIsOpen={true} /> */}
+      {/* </QueryClientProvider> */}
+    </Provider>
   );
 }
 

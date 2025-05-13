@@ -12,7 +12,8 @@
       "@stories/*": ["stories/*"],
       "@services/*": ["services/*"],
       "@features/*": ["features/*"],
-      "@apptypes/*": ["types/*"]
+      "@apptypes/*": ["types/*"],
+      "@sagas/*": ["sagas/*"]
     },
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "types": ["node", "jest", "vitest/globals", "@testing-library/jest-dom"],
