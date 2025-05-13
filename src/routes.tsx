@@ -44,10 +44,6 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: Route.HOME.path,
-        element: <HomePage />,
-      },
-      {
         path: Route.FILES_LIST.path,
         element: <FilesList />,
       },

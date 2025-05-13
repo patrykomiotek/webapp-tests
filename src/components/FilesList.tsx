@@ -13,8 +13,34 @@ interface Records {
 interface Files {
   records: Records[];
 }
+
+type Status =
+  | {
+      // pending
+      isLoading: true;
+      isError: false;
+      data: undefined;
+    }
+  | {
+      // fulfilled
+      isLoading: false;
+      isError: false;
+      data: Files;
+    }
+  | {
+      // rejected
+      isLoading: false;
+      isError: true;
+      data: undefined;
+    };
+
 const FilesList = () => {
-  const [files, setFiles] = useState<Files>();
+  const [status, setStatus] = useState<Status>({
+    isLoading: true,
+    isError: false,
+    data: undefined,
+  });
+  // const [files, setFiles] = useState<Files>();
   const fetchFiles = async (): Promise<Files> => {
     const response = await fetch('https://api.airtable.com/v0/appbOzKPuEebvDE0e/files', {
       method: 'get',
@@ -31,15 +57,28 @@ const FilesList = () => {
   useEffect(() => {
     const load = async () => {
       const filesData = await fetchFiles();
-      setFiles(filesData);
+      setStatus({
+        isLoading: false,
+        isError: false,
+        data: filesData,
+      });
+      // setFiles(filesData);
     };
     load();
   }, []);
 
+  if (status.isError) {
+    return <h1>Files error</h1>;
+  }
+
+  if (status.isLoading) {
+    return <h1>Loading...</h1>;
+  }
+
   return (
     <div>
-      {files?.records[0]?.fields.name}
-      {files?.records?.map((item, i) => {
+      {status.data?.records[0]?.fields.name}
+      {status.data?.records?.map((item, i) => {
         return (
           <div>
             <Link to={`/files/${item.id}`} key={item.id}>

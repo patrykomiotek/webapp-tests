@@ -7,6 +7,7 @@ import App from './App.tsx';
 const envSchema = z.object({
   VITE_API_BASE_URL: z.string(),
   VITE_API_TOKEN: z.string(),
+  // TEST_TEST: z.string(),
 });
 
 console.log({ envs: import.meta.env });
