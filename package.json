@@ -6,12 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "coverage": "vitest run --coverage",
     "lint": "eslint .",
     "preview": "vite preview",
     "prepare": "husky",
     "test": "vitest",
     "test:watch": "vitest --watch",
+    "test:coverage": "vitest run --coverage",
     "redeploy": "curl -X POST https://api.netlify.com/build_hooks/6750450a396b7809c5bd446f && echo 'In progress, build will be available at: https://workshopswa.netlify.app'",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

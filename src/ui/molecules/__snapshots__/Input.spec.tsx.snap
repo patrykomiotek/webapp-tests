@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`input component > should match snapshot 1`] = `
+<div>
+  <div>
+    <label
+      for=":r0:"
+    >
+      My input
+    </label>
+    <input
+      class="my-btn undefined"
+      id=":r0:"
+    />
+  </div>
+</div>
+`;
