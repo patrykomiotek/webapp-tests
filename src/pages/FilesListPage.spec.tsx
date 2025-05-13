@@ -8,6 +8,13 @@ import { fetchFiles } from '@services/fetchFiles';
 
 describe('FilesListPage', () => {
   it('should render loading indicator', () => {
+    // vi.mocked(fetchFiles).mockImplementationOnce(
+    //   () =>
+    //     new Promise.resolve({
+    //       records: [{ id: '123', fields: { name: 'aaa', description: 'bbb', type: 'text/plain' } }],
+    //     }),
+    // );
+
     vi.mocked(fetchFiles).mockResolvedValueOnce({
       records: [{ id: '123', fields: { name: 'aaa', description: 'bbb', type: 'text/plain' } }],
     });
