@@ -5,6 +5,7 @@ import { Layout } from './components/Layout';
 import FilesList from '@components/FilesList';
 import FileDetails from '@components/FileDetails';
 import FileForm from '@components/FileForm';
+import { FilesListPage } from '@pages/FilesListPage';
 
 type Route = Record<
   string,
@@ -45,7 +46,7 @@ export const router = createBrowserRouter([
       },
       {
         path: Route.FILES_LIST.path,
-        element: <FilesList />,
+        element: <FilesListPage />,
       },
       {
         path: Route.FILE_DETAILS.path,
