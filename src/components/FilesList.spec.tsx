@@ -19,7 +19,7 @@ describe('FileList spec', () => {
     // debug, container, rerender, unmount
     const { debug } = render(<FilesList files={data} />);
 
-    debug();
+    // debug();
     // const elem = screen.getByText('aaaa');
     const elem = screen.getByText('aaa', { exact: false });
     // const elem = screen.getByText(/aaaa/i);
