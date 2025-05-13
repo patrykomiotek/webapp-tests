@@ -15,6 +15,14 @@ export const Menu = () => {
               Home
             </NavLink>
           </li>
+          <li className="mr-4">
+            <NavLink
+              to={Route.FILES_LIST.path}
+              className={({ isActive }) => (isActive ? 'text-red-400' : 'dark:text-white')}
+            >
+              Files
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </div>
