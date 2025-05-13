@@ -10,10 +10,11 @@ export const FilesList = ({ files }: Props) => {
     <div>
       {files.map((item) => {
         return (
+          // children: string[]
           <div>
-            <Link to={`/files/${item.id}`} key={item.id}>
-              {item.fields.name} - {item.fields.description}
-            </Link>
+            {/* <Link to={`/files/${item.id}`} key={item.id}> */}
+            {item.fields.name} - {item.fields.description}
+            {/* </Link> */}
           </div>
         );
       })}

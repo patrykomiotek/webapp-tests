@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import { HomePage } from '@pages/HomePage';
 import { Layout } from './components/Layout';
-import FilesList from '@components/FilesList';
+// import FilesList from '@components/FilesList';
 import FileDetails from '@components/FileDetails';
 import FileForm from '@components/FileForm';
 import { FilesListPage } from '@pages/FilesListPage';
