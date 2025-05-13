@@ -22,6 +22,9 @@ const vitestConfig = defineVitestConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./vitest-setup.ts'],
+    coverage: {
+      reporter: ['text', 'json', 'html'],
+    },
   },
 });
 
