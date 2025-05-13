@@ -41,6 +41,8 @@ const FilesList = () => {
     data: undefined,
   });
   // const [files, setFiles] = useState<Files>();
+
+  // export, mock
   const fetchFiles = async (): Promise<Files> => {
     const response = await fetch('https://api.airtable.com/v0/appbOzKPuEebvDE0e/files', {
       method: 'get',
@@ -56,12 +58,21 @@ const FilesList = () => {
 
   useEffect(() => {
     const load = async () => {
-      const filesData = await fetchFiles();
-      setStatus({
-        isLoading: false,
-        isError: false,
-        data: filesData,
-      });
+      try {
+        const filesData = await fetchFiles();
+        setStatus({
+          isLoading: false,
+          isError: false,
+          data: filesData,
+        });
+      } catch {
+        setStatus({
+          isLoading: false,
+          isError: true,
+          data: undefined,
+        });
+      }
+
       // setFiles(filesData);
     };
     load();
