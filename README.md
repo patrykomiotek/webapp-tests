@@ -1,5 +1,22 @@
 # React + TypeScript + Vite
 
+Tests:
+- Vitest, React Testing Library
+- Components, Hooks
+- Mocking (mock, fn, mocked, importActual)
+
+
+- spyOn
+- Redux
+- Redux, saga
+- Redux (core) + sagas + logic
+- Redux (toolkit) + logic
+- React Router
+- Cypress
+
+
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
