@@ -12,4 +12,8 @@ describe('FileList spec', () => {
 
     expect(elem).toBeInTheDocument();
   });
+
+  it('should display resolved values', () => {
+    const { debug } = render(<FilesList />);
+  });
 });
