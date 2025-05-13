@@ -1,10 +1,20 @@
 import { useState, useEffect } from 'react';
 
-const useViewport = () => {
-  const [size, setSize] = useState({ x: 0, y: 0 });
+interface Size {
+  x: number;
+  y: number;
+}
+
+const getCurrentSize = (): Size => ({
+  x: window.innerWidth,
+  y: window.innerHeight,
+});
+
+export const useViewport = () => {
+  const [size, setSize] = useState<Size>(getCurrentSize());
 
   const handleResize = () => {
-    setSize({ x: window.innerWidth, y: window.innerHeight });
+    setSize(getCurrentSize());
     console.log('handle resize');
   };
 
@@ -20,5 +30,3 @@ const useViewport = () => {
 
   return size;
 };
-
-export { useViewport };
