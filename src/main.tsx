@@ -12,7 +12,7 @@ const envSchema = z.object({
 
 console.log({ envs: import.meta.env });
 try {
-  const parsedValues = envSchema.parse(import.meta.env);
+  envSchema.parse(import.meta.env);
 } catch (error) {
   console.log('Env vars error: ', JSON.stringify(error, null, 2));
   process.exit(1);

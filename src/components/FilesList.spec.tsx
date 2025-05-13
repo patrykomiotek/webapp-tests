@@ -17,7 +17,7 @@ const data: FileDto[] = [
 describe('FileList spec', () => {
   it('should display rendered data', () => {
     // debug, container, rerender, unmount
-    const { debug } = render(<FilesList files={data} />);
+    render(<FilesList files={data} />);
 
     // debug();
     // const elem = screen.getByText('aaaa');

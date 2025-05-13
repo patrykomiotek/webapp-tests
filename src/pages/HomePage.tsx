@@ -1,4 +1,3 @@
-import { Generator } from '@components/Generator';
 import { Viewport } from '@components/Viewport';
 
 export const HomePage = () => {

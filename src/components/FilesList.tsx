@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import { FileDto } from '@apptypes/dtos/Files.dto';
 interface Props {
   files: FileDto[];

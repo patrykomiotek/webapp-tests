@@ -3,7 +3,7 @@ import { Generator } from './Generator';
 
 describe('Generator component', () => {
   it('should change value on the screen', () => {
-    const { debug } = render(<Generator />);
+    render(<Generator />);
     // debug();
 
     const idElement = screen.getByText(/[a-z0-9-]{36}/);
