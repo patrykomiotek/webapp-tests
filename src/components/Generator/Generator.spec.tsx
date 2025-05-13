@@ -6,12 +6,26 @@ describe('Generator component', () => {
     const { debug } = render(<Generator />);
     debug();
 
-    const uuid = screen.getByText(/[a-z0-9-]{36}/).textContent;
+    const idElement = screen.getByText(/[a-z0-9-]{36}/);
+    const id = idElement.textContent;
+    expect(idElement).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('button'));
 
-    const uuidChanged = screen.getByText(/[a-z0-9-]{36}/).textContent;
+    const newIdElement = screen.getByText(/[a-z0-9-]{36}/);
+    const newId = newIdElement.textContent;
+    expect(newIdElement).toBeInTheDocument();
 
-    expect(uuid).not.toEqual(uuidChanged);
+    debug();
+
+    expect(id).not.toEqual(newId);
+
+    // const uuid = screen.getByText(/[a-z0-9-]{36}/).textContent;
+
+    // fireEvent.click(screen.getByRole('button'));
+
+    // const uuidChanged = screen.getByText(/[a-z0-9-]{36}/).textContent;
+
+    // expect(uuid).not.toEqual(uuidChanged);
   });
 });
