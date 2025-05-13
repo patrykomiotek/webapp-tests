@@ -4,7 +4,7 @@ import { Generator } from './Generator';
 describe('Generator component', () => {
   it('should change value on the screen', () => {
     const { debug } = render(<Generator />);
-    debug();
+    // debug();
 
     const idElement = screen.getByText(/[a-z0-9-]{36}/);
     const id = idElement.textContent;
@@ -16,7 +16,7 @@ describe('Generator component', () => {
     const newId = newIdElement.textContent;
     expect(newIdElement).toBeInTheDocument();
 
-    debug();
+    // debug();
 
     expect(id).not.toEqual(newId);
 
