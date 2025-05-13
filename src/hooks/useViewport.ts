@@ -30,3 +30,5 @@ export const useViewport = () => {
 
   return size;
 };
+
+export const foo = 'bar';
