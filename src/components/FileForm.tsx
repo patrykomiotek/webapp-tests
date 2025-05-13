@@ -1,5 +1,5 @@
 // copy paste from Slack
-const Form = () => {
+const FileForm = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -51,4 +51,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default FileForm;

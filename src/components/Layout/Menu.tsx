@@ -23,6 +23,14 @@ export const Menu = () => {
               Files
             </NavLink>
           </li>
+          <li className="mr-4">
+            <NavLink
+              to={Route.ADD_FILE.path}
+              className={({ isActive }) => (isActive ? 'text-red-400' : 'dark:text-white')}
+            >
+              Add file
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </div>

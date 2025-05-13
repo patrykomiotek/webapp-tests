@@ -4,6 +4,7 @@ import { HomePage } from '@pages/HomePage';
 import { Layout } from './components/Layout';
 import FilesList from '@components/FilesList';
 import FileDetails from '@components/FileDetails';
+import FileForm from '@components/FileForm';
 
 type Route = Record<
   string,
@@ -22,6 +23,10 @@ export const Route: Route = {
   FILES_LIST: {
     path: '/files',
     title: 'Files',
+  },
+  ADD_FILE: {
+    path: '/add-file',
+    title: 'Add File',
   },
   FILE_DETAILS: {
     path: '/files/:fileId',
@@ -49,6 +54,10 @@ export const router = createBrowserRouter([
       {
         path: Route.FILE_DETAILS.path,
         element: <FileDetails />,
+      },
+      {
+        path: Route.ADD_FILE.path,
+        element: <FileForm />,
       },
     ],
   },
