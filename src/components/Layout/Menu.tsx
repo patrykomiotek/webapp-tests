@@ -31,6 +31,38 @@ export const Menu = () => {
               Add file
             </NavLink>
           </li>
+          <li className="mr-4">
+            <NavLink
+              to={Route.GENERATOR.path}
+              className={({ isActive }) => (isActive ? 'text-red-400' : 'dark:text-white')}
+            >
+              Generator
+            </NavLink>
+          </li>
+          <li className="mr-4">
+            <NavLink
+              to={Route.TODO_LIST.path}
+              className={({ isActive }) => (isActive ? 'text-red-400' : 'dark:text-white')}
+            >
+              Todos
+            </NavLink>
+          </li>
+          <li className="mr-4">
+            <NavLink
+              to={Route.AUTH_INFO.path}
+              className={({ isActive }) => (isActive ? 'text-red-400' : 'dark:text-white')}
+            >
+              Auth info
+            </NavLink>
+          </li>
+          <li className="mr-4">
+            <NavLink
+              to={Route.VIEWPORT.path}
+              className={({ isActive }) => (isActive ? 'text-red-400' : 'dark:text-white')}
+            >
+              Viewport
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </div>

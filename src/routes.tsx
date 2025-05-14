@@ -6,6 +6,10 @@ import { Layout } from './components/Layout';
 import FileDetails from '@components/FileDetails';
 import FileForm from '@components/FileForm';
 import { FilesListPage } from '@pages/FilesListPage';
+import { AuthInfoPage } from '@pages/AuthInfoPage';
+import { GeneratorPage } from '@pages/GeneratorPage';
+import { ViewportPage } from '@pages/ViewportPage';
+import { TodoListPage } from '@pages/TodoListPage';
 
 type Route = Record<
   string,
@@ -33,6 +37,22 @@ export const Route: Route = {
     path: '/files/:fileId',
     title: 'File details',
   },
+  GENERATOR: {
+    path: '/generator',
+    title: 'Generator',
+  },
+  AUTH_INFO: {
+    path: '/auth/info',
+    title: 'Auth Info',
+  },
+  TODO_LIST: {
+    path: '/todos',
+    title: 'Todo List',
+  },
+  VIEWPORT: {
+    path: '/viewport',
+    title: 'Viewport',
+  },
 } as const;
 
 export const router = createBrowserRouter([
@@ -55,6 +75,22 @@ export const router = createBrowserRouter([
       {
         path: Route.ADD_FILE.path,
         element: <FileForm />,
+      },
+      {
+        path: Route.AUTH_INFO.path,
+        element: <AuthInfoPage />,
+      },
+      {
+        path: Route.GENERATOR.path,
+        element: <GeneratorPage />,
+      },
+      {
+        path: Route.VIEWPORT.path,
+        element: <ViewportPage />,
+      },
+      {
+        path: Route.TODO_LIST.path,
+        element: <TodoListPage />,
       },
     ],
   },
