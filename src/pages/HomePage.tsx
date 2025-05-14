@@ -1,5 +1,5 @@
-import { Viewport } from '@components/Viewport';
-import { AuthInfo } from '@features/products/components/Auth/AuthInfo';
+// import { Viewport } from '@components/Viewport';
+import { AuthInfo } from '@components/Auth/AuthInfo';
 
 export const HomePage = () => {
   return (
