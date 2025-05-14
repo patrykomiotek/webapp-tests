@@ -1,3 +1,4 @@
+import { useAuth } from '@hooks/useAuth';
 import { createContext, useContext } from 'react';
 
 // isLogged: boolean
@@ -6,7 +7,7 @@ import { createContext, useContext } from 'react';
 // logOut: () => void
 
 interface AuthContextInterface {
-  isLogged: boolean;
+  isLoggedIn: boolean;
   toggle: () => void;
   logIn: () => void;
   logOut: () => void;
@@ -22,4 +23,14 @@ export const useAuthContext = () => {
   }
 
   return context;
+};
+
+export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
+  // const { isLoggedIn, logIn, logOut, toggle } = useAuth(); // external hook
+  return (
+    <AuthContext.Provider value={useAuth()}>
+      {/* <AuthContext.Provider value={{ isLoggedIn, logIn, logOut, toggle }}> */}
+      {children}
+    </AuthContext.Provider>
+  );
 };
