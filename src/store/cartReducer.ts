@@ -6,7 +6,11 @@ import {
   UPDATE_ITEM_QUANTITY,
 } from './cartTypes';
 
-export const cartReducer = (state: CartState, action: CartActionType) => {
+const initialState: CartState = {
+  items: [],
+};
+
+export const cartReducer = (state: CartState = initialState, action: CartActionType) => {
   switch (action.type) {
     case ADD_ITEM_TO_CART: {
       const element = state.items.find((elem) => elem.id === action.payload.id);

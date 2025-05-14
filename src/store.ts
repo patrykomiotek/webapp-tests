@@ -1,6 +1,8 @@
-import { combineReducers, createStore, compose, applyMiddleware } from 'redux';
+import { combineReducers, createStore, compose, applyMiddleware, Reducer } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { rootSaga } from '@sagas/rootSaga';
+import { cartReducer } from 'store/cartReducer';
+import { CartActionType, CartState } from 'store/cartTypes';
 
 interface Action {
   type: string;
@@ -60,6 +62,7 @@ const rootReducer = combineReducers({
   counter: counterReducer,
   // TODO: implement
   // products: productsReducer,
+  cart: cartReducer as Reducer<CartState, CartActionType>,
 });
 
 const sagaMiddleware = createSagaMiddleware();
