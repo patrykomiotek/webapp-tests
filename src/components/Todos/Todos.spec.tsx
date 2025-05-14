@@ -38,7 +38,7 @@ describe('Todo component', () => {
       { id: 3, name: 'c', completed: false },
     ]);
 
-    const { debug } = render(<TodoList />);
+    render(<TodoList />);
     // debug(); // this debug wont display resolved values
 
     await screen.findByText('a');
