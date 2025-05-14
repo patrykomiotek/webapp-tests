@@ -16,7 +16,7 @@ const INITIAL_STATE = {
   count: 0,
 };
 
-const counterReducer = (state: State = INITIAL_STATE, action: Action) => {
+export const counterReducer = (state: State = INITIAL_STATE, action: Action) => {
   switch (action.type) {
     case 'increment':
       return {

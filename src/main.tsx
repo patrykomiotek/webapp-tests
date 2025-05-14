@@ -15,7 +15,8 @@ try {
   envSchema.parse(import.meta.env);
 } catch (error) {
   console.log('Env vars error: ', JSON.stringify(error, null, 2));
-  process.exit(1);
+  throw new Error('Missing env vars, check browser console for more details');
+  // process.exit(1);
 }
 
 createRoot(document.getElementById('root')!).render(
