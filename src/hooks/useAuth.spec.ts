@@ -1,14 +1,14 @@
 import { act, renderHook } from '@testing-library/react';
-import { useAuthContext } from './useAuthContext';
+import { useAuth } from './useAuth';
 
 // isLogged: boolean
 // toggle: () => void
 // logIn: () => void
 // logOut: () => void
 
-describe('useAuthContext', () => {
+describe('useAuth', () => {
   it('should return default state', () => {
-    const { result } = renderHook(() => useAuthContext());
+    const { result } = renderHook(() => useAuth());
 
     const defaultState = result.current;
     const isLoggedIn = defaultState.isLoggedIn;
@@ -17,7 +17,7 @@ describe('useAuthContext', () => {
   });
 
   it('should toggle values', () => {
-    const { result } = renderHook(() => useAuthContext());
+    const { result } = renderHook(() => useAuth());
 
     const defaultState = result.current;
     let isLoggedIn = defaultState.isLoggedIn;
@@ -34,7 +34,7 @@ describe('useAuthContext', () => {
   });
 
   it('should log in', () => {
-    const { result } = renderHook(() => useAuthContext());
+    const { result } = renderHook(() => useAuth());
 
     const defaultState = result.current;
     let isLoggedIn = defaultState.isLoggedIn;
@@ -51,7 +51,7 @@ describe('useAuthContext', () => {
   });
 
   it('should log out', () => {
-    const { result } = renderHook(() => useAuthContext());
+    const { result } = renderHook(() => useAuth());
 
     const defaultState = result.current;
     let isLoggedIn = defaultState.isLoggedIn;

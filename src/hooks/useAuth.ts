@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const useAuthContext = () => {
+export const useAuth = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const toggle = () => setIsLoggedIn((value) => !value);
