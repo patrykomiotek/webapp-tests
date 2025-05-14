@@ -10,6 +10,7 @@ import { AuthInfoPage } from '@pages/AuthInfoPage';
 import { GeneratorPage } from '@pages/GeneratorPage';
 import { ViewportPage } from '@pages/ViewportPage';
 import { TodoListPage } from '@pages/TodoListPage';
+import { CartPage } from '@pages/CartPage';
 
 type Route = Record<
   string,
@@ -53,6 +54,10 @@ export const Route: Route = {
     path: '/viewport',
     title: 'Viewport',
   },
+  CART: {
+    path: '/cart',
+    title: 'Cart',
+  },
 } as const;
 
 export const router = createBrowserRouter([
@@ -91,6 +96,10 @@ export const router = createBrowserRouter([
       {
         path: Route.TODO_LIST.path,
         element: <TodoListPage />,
+      },
+      {
+        path: Route.CART.path,
+        element: <CartPage />,
       },
     ],
   },
