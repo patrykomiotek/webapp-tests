@@ -66,7 +66,7 @@ export const FilesListPage = () => {
   return (
     <div>
       <h1>Files list</h1>
-      <FilesList files={status.data.records} />
+      {status.data.records.length && <FilesList files={status.data.records} />}
     </div>
   );
 };

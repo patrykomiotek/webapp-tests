@@ -9,7 +9,7 @@ export const FilesList = ({ files }: Props) => {
       {files.map((item) => {
         return (
           // children: string[]
-          <div>
+          <div key={item.id}>
             {/* <Link to={`/files/${item.id}`} key={item.id}> */}
             {item.fields.name} - {item.fields.description}
             {/* </Link> */}
