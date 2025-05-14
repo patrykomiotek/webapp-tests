@@ -1,5 +1,5 @@
 import { defineConfig as defineViteConfig, mergeConfig } from 'vite';
-import { defineConfig as defineVitestConfig } from 'vitest/config';
+import { configDefaults, defineConfig as defineVitestConfig } from 'vitest/config';
 
 import react from '@vitejs/plugin-react';
 import tsconfigPaths from 'vite-tsconfig-paths';
@@ -25,6 +25,13 @@ const vitestConfig = defineVitestConfig({
     coverage: {
       reporter: ['text', 'json', 'html'],
     },
+    exclude: [
+      ...configDefaults.exclude,
+      './src/stories/**',
+      './src/**/*.{stories}.tsx',
+      './src/**/*.{stories}.ts',
+      './src/ui/utils/cn.ts',
+    ],
   },
 });
 
