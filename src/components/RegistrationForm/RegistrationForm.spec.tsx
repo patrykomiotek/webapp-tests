@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { userEvent } from '@testing-library/user-event';
+// import { userEvent } from '@testing-library/user-event';
 import { RegistrationForm } from './RegistrationForm';
 
 describe('RegistrationForm component', () => {

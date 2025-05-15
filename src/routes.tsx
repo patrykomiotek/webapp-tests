@@ -4,7 +4,6 @@ import { HomePage } from '@pages/HomePage';
 import { Layout } from './components/Layout';
 // import FilesList from '@components/FilesList';
 import FileDetails from '@components/FileDetails';
-import FileForm from '@components/FileForm';
 import { FilesListPage } from '@pages/FilesListPage';
 import { AuthInfoPage } from '@pages/AuthInfoPage';
 import { GeneratorPage } from '@pages/GeneratorPage';

@@ -3,21 +3,34 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { Cart } from './Cart';
 import { combineReducers, createStore, Reducer, UnknownAction } from 'redux';
 import { cartReducer } from 'store/cartReducer';
-import { CartActionType, CartState } from 'store/cartTypes';
+import { CartState } from 'store/cartTypes';
 import { Provider } from 'react-redux';
-import { AppDispatch, counterReducer, RootState } from 'store';
+import { counterReducer, RootState } from 'store';
 
 const testReducer = combineReducers({
   counter: counterReducer,
   cart: cartReducer as Reducer<CartState, UnknownAction>,
 });
 
-type InitialState = ReturnType<typeof testReducer>;
+// type InitialState = ReturnType<typeof testReducer>;
 // type InitialState: RootState;
 
 const initialState: RootState = {
   counter: {
     count: 0,
+  },
+  wizard: {
+    currentStep: 1,
+    incomeDetails: {
+      annualIncome: 0,
+      employmentStatus: '',
+    },
+    isSubmitted: false,
+    personalInfo: {
+      firstName: '',
+      lastName: '',
+      age: 0,
+    },
   },
   cart: {
     items: [
