@@ -32,7 +32,7 @@ export default defineConfig({
     trace: 'on-first-retry',
 
     // https://playwright.dev/docs/videos
-    video: 'on-first-retry',
+    // video: 'on-first-retry',
   },
 
   /* Configure projects for major browsers */
