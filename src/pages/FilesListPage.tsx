@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+
+import { Route } from '../routes';
 
 import { FilesDto } from '@apptypes/dtos/Files.dto';
 import { FilesList } from '@components/FilesList';
@@ -64,9 +67,14 @@ export const FilesListPage = () => {
   }
 
   return (
-    <div>
-      <h1>Files list</h1>
-      {status.data.records.length && <FilesList files={status.data.records} />}
-    </div>
+    <>
+      <Helmet>
+        <title>{Route.FILES_LIST.title}</title>
+      </Helmet>
+      <div>
+        <h1>Files list</h1>
+        {status.data.records.length && <FilesList files={status.data.records} />}
+      </div>
+    </>
   );
 };

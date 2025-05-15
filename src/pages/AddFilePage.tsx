@@ -1,15 +1,16 @@
 import { Helmet } from 'react-helmet-async';
 
 import { Route } from '../routes';
+import FileForm from '@components/FileForm';
 
-export const HomePage = () => {
+export const AddFilePage = () => {
   return (
     <>
       <Helmet>
-        <title>{Route.HOME.title}</title>
+        <title>{Route.ADD_FILE.title}</title>
       </Helmet>
       <div>
-        <h1 className="text-3xl my-2">Hello from home</h1>
+        <FileForm />
       </div>
     </>
   );

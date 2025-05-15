@@ -11,6 +11,7 @@ import { GeneratorPage } from '@pages/GeneratorPage';
 import { ViewportPage } from '@pages/ViewportPage';
 import { TodoListPage } from '@pages/TodoListPage';
 import { CartPage } from '@pages/CartPage';
+import { AddFilePage } from '@pages/AddFilePage';
 
 type Route = Record<
   string,
@@ -79,7 +80,7 @@ export const router = createBrowserRouter([
       },
       {
         path: Route.ADD_FILE.path,
-        element: <FileForm />,
+        element: <AddFilePage />,
       },
       {
         path: Route.AUTH_INFO.path,
