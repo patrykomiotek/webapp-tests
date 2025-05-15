@@ -15,6 +15,7 @@ export const Menu = () => {
         <NavLink to={Route.VIEWPORT.path}>Viewport</NavLink>
         <NavLink to={Route.CART.path}>Cart</NavLink>
         <NavLink to={Route.REGISTRATION_FORM.path}>Registration</NavLink>
+        <NavLink to={Route.FORM_WIZARD.path}>Wizard</NavLink>
       </NavLinkContainer>
     </div>
   );

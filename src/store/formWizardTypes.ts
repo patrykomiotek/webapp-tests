@@ -24,6 +24,19 @@ export const UPDATE_INCOME_DETAILS = 'wizard/UPDATE_INCOME_DETAILS';
 export const SUBMIT_WIZARD_SUCCESS = 'wizard/SUBMIT_WIZARD_SUCCESS';
 export const RESET_WIZARD = 'wizard/RESET_WIZARD';
 
+export const nextStep = () => ({ type: NEXT_STEP });
+export const prevStep = () => ({ type: PREVIOUS_STEP });
+export const updatePersonalInfo = (data: PersonalInfoData) => ({
+  type: UPDATE_PERSONAL_INFO,
+  payload: data,
+});
+export const updateIncomeDetails = (data: IncomeDetailsData) => ({
+  type: UPDATE_INCOME_DETAILS,
+  payload: data,
+});
+export const submitWizardSuccess = () => ({ type: SUBMIT_WIZARD_SUCCESS });
+export const resetWizard = () => ({ type: RESET_WIZARD });
+
 export type FormWizardActionType =
   | {
       type: 'wizard/NEXT_STEP';

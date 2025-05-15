@@ -13,6 +13,7 @@ import { TodoListPage } from '@pages/TodoListPage';
 import { CartPage } from '@pages/CartPage';
 import { AddFilePage } from '@pages/AddFilePage';
 import { RegistrationFormPage } from '@pages/RegistrationFormPage';
+import { FormWizardPage } from '@pages/FormWizardPage';
 
 type Route = Record<
   string,
@@ -64,6 +65,10 @@ export const Route: Route = {
     path: '/registration',
     title: 'Registration Form',
   },
+  FORM_WIZARD: {
+    path: '/wizard',
+    title: 'Registration Wizard',
+  },
 } as const;
 
 export const router = createBrowserRouter([
@@ -110,6 +115,10 @@ export const router = createBrowserRouter([
       {
         path: Route.REGISTRATION_FORM.path,
         element: <RegistrationFormPage />,
+      },
+      {
+        path: Route.FORM_WIZARD.path,
+        element: <FormWizardPage />,
       },
     ],
   },

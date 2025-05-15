@@ -3,6 +3,8 @@ import createSagaMiddleware from 'redux-saga';
 import { rootSaga } from '@sagas/rootSaga';
 import { cartReducer } from 'store/cartReducer';
 import { CartActionType, CartState } from 'store/cartTypes';
+import { formWizardReducer } from 'store/formWizardReducer';
+import { FormWizardActionType, FormWizardState } from 'store/formWizardTypes';
 
 interface Action {
   type: string;
@@ -63,6 +65,7 @@ const rootReducer = combineReducers({
   // TODO: implement
   // products: productsReducer,
   cart: cartReducer as Reducer<CartState, CartActionType>,
+  wizard: formWizardReducer as Reducer<FormWizardState, FormWizardActionType>,
 });
 
 const sagaMiddleware = createSagaMiddleware();
