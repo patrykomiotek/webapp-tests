@@ -34,6 +34,10 @@ export const RegistrationForm = () => {
     if (!email.current.value) {
       setValidationModel((prev) => ({ ...prev, email: 'email wymagany' }));
     }
+    if (!email.current.value.includes('@')) {
+      // TODO: replace to sth better ;)
+      setValidationModel((prev) => ({ ...prev, email: 'email jest nieprawidłowy' }));
+    }
     if (!password.current.value) {
       setValidationModel((prev) => ({ ...prev, password: 'hasło wymagane' }));
       result = false;
