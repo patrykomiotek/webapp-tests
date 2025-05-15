@@ -16,16 +16,15 @@ const FileDetails = () => {
   const params = useParams();
   const [file, setFile] = useState<FileRecord>();
   const fetchFile = async (): Promise<FileRecord> => {
-    const response = await fetch(
-      `https://api.airtable.com/v0/appbOzKPuEebvDE0e/files/${params.fileId}`,
-      {
-        method: 'get',
-        headers: {
-          Authorization:
-            'Bearer patvjVDG4kA67qvMB.d403954180b077dcd0c0400be80fabd5654264488be1f0aef794dbffb352a0d6',
-        },
+    const AIRTABLE_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+    const AIRTABLE_API_TOKEN = import.meta.env.VITE_API_TOKEN;
+
+    const response = await fetch(`${AIRTABLE_BASE_URL}/files/${params.fileId}`, {
+      method: 'get',
+      headers: {
+        Authorization: `Bearer ${AIRTABLE_API_TOKEN}`,
       },
-    );
+    });
     console.log(response);
     const data = await response.json();
     return data;
