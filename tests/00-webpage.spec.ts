@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('has title', async ({ page }) => {
-  await page.goto('http://webcon.com');
+  await page.goto('https://webcon.com');
 
   await expect(page).toHaveTitle(
     /Low Code Platform, Workflow Automation, Business Process Management/i,
@@ -9,7 +9,7 @@ test('has title', async ({ page }) => {
 });
 
 test('get started link', async ({ page }) => {
-  await page.goto('http://webcon.com');
+  await page.goto('https://webcon.com');
 
   // await expect(page.getByText(/the way you work/i)).toBeVisible();
 
