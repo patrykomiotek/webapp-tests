@@ -12,6 +12,7 @@ import { ViewportPage } from '@pages/ViewportPage';
 import { TodoListPage } from '@pages/TodoListPage';
 import { CartPage } from '@pages/CartPage';
 import { AddFilePage } from '@pages/AddFilePage';
+import { RegistrationFormPage } from '@pages/RegistrationFormPage';
 
 type Route = Record<
   string,
@@ -59,6 +60,10 @@ export const Route: Route = {
     path: '/cart',
     title: 'Cart',
   },
+  REGISTRATION_FORM: {
+    path: '/registration',
+    title: 'Registration Form',
+  },
 } as const;
 
 export const router = createBrowserRouter([
@@ -101,6 +106,10 @@ export const router = createBrowserRouter([
       {
         path: Route.CART.path,
         element: <CartPage />,
+      },
+      {
+        path: Route.REGISTRATION_FORM.path,
+        element: <RegistrationFormPage />,
       },
     ],
   },

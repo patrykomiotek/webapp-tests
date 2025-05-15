@@ -27,6 +27,8 @@ const vitestConfig = defineVitestConfig({
     },
     exclude: [
       ...configDefaults.exclude,
+      './tests/**',
+      './tests-examples/**',
       './src/stories/**',
       './src/**/*.{stories}.tsx',
       './src/**/*.{stories}.ts',
